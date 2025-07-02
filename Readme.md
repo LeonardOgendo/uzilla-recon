@@ -21,3 +21,10 @@ dnsx -l filtered.txt -silent -o resolving.txt
 
 # 4. Check for live HTTP(s)
 httpx -l resolving.txt -o live.txt -status-code -title
+```
+
+### 📌 Coming Soon
+
+- Automation Scripts
+- Automated Recon Pipelines
+- More curated lists and tool integrations
