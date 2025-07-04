@@ -13,8 +13,8 @@
 # 1. Run passive enumeration
 subfinder -d target.com -o -s 'your_sources' subs.txt
 
-# 2. Filter for juicy subs
-grep -if wordlists/uzilla-sdms.txt subs.txt > filtered.txt
+# 2. This command cleans the wordlist (remove comments and empty lines) | then Filter for juicy subs
+grep -vE '^#|^$' uzilla-sdms.txt | grep -if wordlists/uzilla-sdms.txt subs.txt > filtered.txt
 
 # 3. Resolve live subdomains
 dnsx -l filtered.txt -silent -o resolving.txt
